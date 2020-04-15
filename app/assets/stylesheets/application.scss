@@ -1,0 +1,61 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+ font-size: 18px;
+}
+
+body {
+ background: #F8F8FF;
+ color: #333;
+ font-family: 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+
+}
+
+//フォーム
+h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.box {
+  width: 580px;
+  background: #ffffff;
+  margin: 2rem auto 0;
+  padding: 2rem 5rem;
+}
+
+.actions {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.form input:not([type="submit"]) {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #E9EAED;
+    font-size: 1rem;
+    padding-bottom: .7rem;
+    margin-bottom: 3rem;
+}
