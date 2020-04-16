@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TheView</title>
+    <title>The View</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,7 +9,36 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body
+  ><nav class="navbar navbar-default">
+  <div class="container">
+    <nav class='nav navbar-nav navbar-left' >
+      <h1>The View</h1>
+    </nav>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to 'トップ', root_path %></li>
+          <li><%= link_to '全ての投稿', posts_path %></li>
+          <li><%= link_to 'マップ'%></li>
+          <li><%= link_to '全てのユーザー', users_path%></li>
+          <% unless user_signed_in? %>
+          <li><%= link_to ' ログイン', new_user_session_path %></a></li>
+          <% end %>
+          <% if user_signed_in? %>
+          <li><%= link_to "投稿する", new_post_path %></li>
+          <li><%= link_to ' ログアウト', destroy_user_session_path, method: :delete %></li>
+          <% end %>
+      </ul>
+
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="検索キーワード">
+            </div>
+            <button type="submit" class="btn btn-default">検索</button>
+          </form>
+    </nav>
+  </div>
+</nav>
     <%= yield %>
   </body>
 </html>

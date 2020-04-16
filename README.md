@@ -1,24 +1,24 @@
-# README
+# The View
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+ 景色を位置情報付きで共有できる写真投稿サイト
 
-Things you may want to cover:
+### サイトテーマ
+景色共有サイト
 
-* Ruby version
+### テーマを選んだ理由
+景色を見ることが好きだから。旅行先を決める上で綺麗な景色の場所を知りたいから。
 
-* System dependencies
+### ターゲットユーザ
+景色を見たい人、共有したい人、旅行先を決めたい人
 
-* Configuration
+### 主な利用シーン
+なんとなく景色が見たいとき、景色から旅行先を探したいとき、景色共有したいとき
 
-* Database creation
 
-* Database initialization
+## 設計書
 
-* How to run the test suite
+### 機能一覧
+https://docs.google.com/spreadsheets/d/1BzuLTh0WP7M1O2MvT_8uprgL2WbrhieaerHlUNk9dGQ/edit#gid=0
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
