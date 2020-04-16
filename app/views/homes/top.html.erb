@@ -1,0 +1,16 @@
+<div class="home">
+	<h1 class="app-title">The View</h1>
+
+	<div class="outline">
+		<p>
+			景色を位置情報付きで共有できる写真投稿サイトです。
+		</p>
+	</div>
+
+	<div class="topbtn-block">
+	 <% unless current_user %>
+      <%= link_to "会員登録", new_user_registration_path, class: "topbtn" %>
+      <%= link_to "ログイン", new_user_session_path, class: "topbtn" %>
+      <% end %>
+    </div>
+</div>

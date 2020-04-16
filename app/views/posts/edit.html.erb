@@ -1,0 +1,17 @@
+<div class="box form">
+	<h2>投稿フォーム</h2>
+	<%= form_for(@post, class: "form") do |f| %>
+	<%= f.text_field :title, placeholder: "タイトル" %>
+	<%= f.text_area :description, placeholder: "説明" %>
+
+	<p class="text-c">投稿してる写真</p>
+	<%= attachment_image_tag @post,:image, class: "edit-picture" %>
+	<label>
+	写真を選択
+    </label>
+	<%= f.attachment_field :image %>
+	<div class="actions">
+		<%= f.submit "更新", class: "btn btn-primary" %>
+	</div>
+	<% end %>
+</div>
