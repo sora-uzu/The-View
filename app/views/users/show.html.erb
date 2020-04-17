@@ -1,0 +1,7 @@
+<div class="user-show">
+ <%= render 'profile', user: @user %>
+
+ <ul class="posts">
+ 	<%= render partial: 'posts/post', collection: @posts %>
+ </ul>
+</div>

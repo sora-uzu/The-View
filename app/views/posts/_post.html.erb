@@ -1,19 +1,19 @@
-<li class="posts--item">
+<li class="posts__item">
 	<%= link_to (post) do %>
 	<div class="post-image" style='background-image:url(<%= attachment_url(post, :image ) %>'>
 	</div>
 	<% end %>
 	<h4 class="post-title"><%= post.title %></h4>
-	<%= attachment_image_tag post.user, :image, class: "prof-image" %>
+	<%= attachment_image_tag post.user, :image, class: "prof-image", size: "30" %>
 	<p class=prof-name><%= post.user.name %></p>
 	<ul class="stats">
-		<li class="stats--icon">
+		<li class="stats__icon">
 			<span class="glyphicon glyphicon-envelope"></span>
 			<span class="comment_count">
           <!-- コメントカウント -->
             </span>
         </li>
-        <li class="stats--icon">
+        <li class="stats__icon">
         	<span class="glyphicon glyphicon-heart"></span>
             <span class="like_count">
           <!-- いいねカウント -->

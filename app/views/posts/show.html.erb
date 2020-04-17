@@ -1,23 +1,22 @@
 <div class="post-show">
 	<%if current_user?(@post.user) %>
-	<div class="edit-btn">
-     <div class="edit-btn--icon">
       <span class="glyphicon glyphicon-pencil"></span>
-     </div>
-	   <ul class="edit-btn--select">
+	   <ul>
 	    <li><%= link_to "編集",edit_post_path(@post) %></li>
 	    <li><%= link_to "削除",post_path(@post, post_id: @post.id), method: "delete",data: {confirm: "削除しますか？"} %></li>
 	   </ul>
-	</div>
 	<% end %>
 
 	<h2><%= @post.title %></h2>
 	<%= attachment_image_tag @post, :image, class:"post-picture" %>
 
 	<div class="post-user">
-	 <%= attachment_image_tag @post.user, :image, class: "prof-image" %>
-	  <div class="post-user--name">
+	 <%= attachment_image_tag @post.user, :image, class: "prof-image", size:"100" %>
+	  <div class="post-user__name">
 	  <%= link_to @post.user.name, @post.user %>
 	  </div>
+	  <div class="post-user__discription">
+	  <%= @post.description %>
+	</div>
 	</div>
 </div>

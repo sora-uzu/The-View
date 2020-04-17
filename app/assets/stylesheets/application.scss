@@ -106,9 +106,10 @@ h3 {
 //投稿リスト
 .posts {
 	display: flex;
+	flex-wrap: wrap;
 	margin: 0 auto;
     width: 900px;
-    &--item {
+    &__item {
     	width: 33%;
     	display: block;
     	box-sizing: border-box;
@@ -127,16 +128,22 @@ h3 {
 
 //投稿詳細　post show
 .post-show {
-	width: 1000px;
+	max-width: 1000px;
+	width: 95%;
 	margin: 0 auto;
 }
 
 .post-user {
 	padding: 2rem;
 	background: #fff;
-	&--name {
+	&__name {
 		margin-left: 1rem;
 		font-size: 1.3rem;
+	}
+	&__discription {
+		margin-left: 1.3rem;
+		margin-top:.3rem;
+		font-size: 1rem;
 	}
 }
 
@@ -156,4 +163,43 @@ h3 {
 .edit-picture {
     width: 100%;
     margin-top: 1rem;
+}
+
+//ユーザー一覧　users index
+.users-index {
+	width: 1000px;
+	margin: 0 auto;
+	background: #fff;
+	padding: 1rem 2rem;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, .15);
+	&__posts{
+		height: 120px;
+		margin-top: 1rem;
+		margin-bottom: 1.5rem;
+     &--picture{
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+     }
+    }
+}
+
+//ユーザープロフ　users prof
+.user-prof {
+	text-align: center;
+	width: 900px;
+	margin: 1rem auto 4rem;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+	background-color: #f8f8f8;
+	border-radius: 10px;
+}
+
+.link-prof {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  color: #ffffff;
+  &__item + &__item {
+    margin-left: 1rem;
+  }
 }
