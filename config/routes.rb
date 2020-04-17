@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'users/index'
+  get 'users/edit'
+  get 'users/show'
   root to: 'homes#top'
   devise_for :users, controllers: {
     registrations: 'users/registrations',

@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def new
-  	@post = current_user.post.build
+  	@post = current_user.posts.build
   end
 
   def edit
@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   end
 
   def create
-  	@post = current_user.post.build(posts_params)
+  	@post = current_user.posts.build(posts_params)
   	if @post.save
   		redirect_to current_user
   	else

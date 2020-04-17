@@ -1,0 +1,16 @@
+<div class="box form">
+ <h2>Edit</h2>
+  <%= form_for(@user) do |f| %>
+    <div class="field">
+	<%= f.text_field :name, class: "name", placeholder: "名前" %>
+    </div>
+    <label class="text-c margin-t-1">
+	写真を選択
+    </label>
+	<%= f.attachment_field :image %>
+
+	<div class="actions">
+	<%= f.submit "投稿", class: "btn btn-primary" %>
+	</div>
+  <% end %>
+</div>

@@ -1,0 +1,14 @@
+<div class="user-prof">
+  <%= attachment_image_tag user, :image, :fill, 150, 150, format: 'jpeg', fallback: "no_image.jpg" %>
+  <p class="user-name"><%= user.name %></p>
+<!-- フォロー系 -->
+
+<ul class="link-prof">
+ <li class="link-prof__item"><%= link_to "投稿一覧", user_path(user) %></li>
+ <li class="link-prof__item"><%= link_to "お気に入り", user_likes_path(user) %></li>
+ <li class="link-prof__item"><%= link_to "マップ" %></li>
+ <% if current_user?(user) %>
+ <li class="link-prof__item"><%= link_to "設定", edit_user_path(user) %></li>
+ <% end %>
+</ul>
+</div>
