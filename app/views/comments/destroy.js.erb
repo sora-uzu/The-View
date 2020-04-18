@@ -1,0 +1,2 @@
+$("#comments_<%= @comment.id %>").remove();
+$(".comment_count").html("<%= j(render 'comments/count', post: @post ) %>");

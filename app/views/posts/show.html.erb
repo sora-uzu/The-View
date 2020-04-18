@@ -25,4 +25,15 @@
     <span class="like_count">
 	<%= render 'likes/like_count', post: @post %>
     </span>
+
+
+    <span class="glyphicon glyphicon-envelope"></span>
+	<span class="comment_count">
+	<%= render 'comments/count', post: @post %>
+    </span>
+    <%= render'comments/comment_form', comment: @comment, post: @post %>
+     <div id="comments-list">
+    <%= render partial: 'comments/comment', collection: @comments %>
+    </div>
+
 </div>
