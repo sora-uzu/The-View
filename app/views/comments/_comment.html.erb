@@ -1,0 +1,12 @@
+<div class="comments" id="comments_<%= comment.id %>">
+	<%= attachment_image_tag comment.user, :image, class: "prof-image",size: "50" %>
+	<div class="comment-index__name">
+		<%= link_to comment.user.name, comment.user %>
+	</div>
+	<% if current_user?(comment.user) %>
+		<%= button_to "削除", post_comment_path(id: comment.id, post_id: comment.post.id), method: :delete, remote: true %>
+	<% end %>
+	<p class="comment-index__content">
+		<%= comment.content %>
+	</p>
+ </div>
