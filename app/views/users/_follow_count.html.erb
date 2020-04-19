@@ -1,0 +1,10 @@
+<div class="follow_count">
+	<%= link_to(following_user_path(user)) do %>
+	<%= user.following.count %>
+	following
+	<% end %>
+	<%= link_to(followers_user_path(user)) do %>
+	<%= user.followers.count %>
+	followers
+	<% end %>
+</div>

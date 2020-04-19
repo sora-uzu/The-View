@@ -14,6 +14,7 @@
 	 <%= attachment_image_tag @post.user, :image, class: "prof-image", size:"100" %>
 	  <div class="post-user__name">
 	  <%= link_to @post.user.name, @post.user %>
+	  <%= render 'users/follow_btn', user: @post.user %>
 	  </div>
 	  <div class="post-user__discription">
 	  <%= @post.description %>

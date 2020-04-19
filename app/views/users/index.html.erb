@@ -6,6 +6,7 @@
  <p>
  <%= link_to user.name, user %>
 </p>
+<%= render 'users/follow_btn', user: user %>
 
  <div class="users-index__posts">
  	<% user.posts.first(3).each do |post| %>
