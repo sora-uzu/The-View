@@ -7,6 +7,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script src="//maps.google.com/maps/api/js?key=AIzaSyAXOpW9I3NOCP_0K-oQfdHouPDfO1SrbgQ"></script>
+    <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
   </head>
 
   <body
@@ -19,13 +22,14 @@
       <ul class="nav navbar-nav navbar-right">
           <li><%= link_to 'トップ', root_path %></li>
           <li><%= link_to '全ての投稿', posts_path %></li>
-          <li><%= link_to 'マップ'%></li>
+          <li><%= link_to 'マップ', map_path %></li>
           <li><%= link_to '全てのユーザー', users_path%></li>
           <% unless user_signed_in? %>
           <li><%= link_to ' ログイン', new_user_session_path %></a></li>
           <% end %>
           <% if user_signed_in? %>
           <li><%= link_to "投稿する", new_post_path %></li>
+          <li><%= link_to 'マイページ', current_user%></li>
           <li><%= link_to ' ログアウト', destroy_user_session_path, method: :delete %></li>
           <% end %>
       </ul>

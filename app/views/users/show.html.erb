@@ -1,6 +1,10 @@
 <div class="user-show">
  <%= render 'profile', user: @user %>
-<h3>My Posts</h3>
+ <% if current_user?(@user) %>
+ <h3>My Posts</h3>
+ <% else %>
+<h3>User's Posts</h3>
+<% end %>
  <ul class="posts">
  	<%= render partial: 'posts/post', collection: @posts %>
  </ul>

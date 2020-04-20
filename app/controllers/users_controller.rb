@@ -33,6 +33,12 @@ class UsersController < ApplicationController
     render 'index'
   end
 
+  def map
+    @user = User.find(params[:id])
+    @posts = @user.posts
+    render 'map'
+  end
+
 
   	private
   	def user_params

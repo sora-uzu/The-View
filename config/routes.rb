@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index,:show,:edit,:update] do
     resources :likes, only: [:index]
     member do
-      get :following, :followers
+      get :following, :followers, :map
     end
   end
 
@@ -19,4 +19,5 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :edit, :update, :destroy]
   end
 
+  get '/map', to: 'posts#map'
 end

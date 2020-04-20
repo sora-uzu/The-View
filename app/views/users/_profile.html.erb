@@ -7,7 +7,7 @@
 <ul class="link-prof">
  <li class="link-prof__item"><%= link_to "投稿一覧", user_path(user) %></li>
  <li class="link-prof__item"><%= link_to "お気に入り", user_likes_path(user) %></li>
- <li class="link-prof__item"><%= link_to "マップ" %></li>
+ <li class="link-prof__item"><%= link_to "マップ", map_user_path(user) %></li>
  <% if current_user?(user) %>
  <li class="link-prof__item"><%= link_to "設定", edit_user_path(user) %></li>
  <% end %>
