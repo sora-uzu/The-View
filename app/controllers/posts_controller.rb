@@ -41,10 +41,14 @@ class PostsController < ApplicationController
   		redirect_to posts_path
   	end
 
+    def map
+    @posts = Post.all
+    end
+
   	private
 
   	def posts_params
   		params.require(:post).permit(
-  			:title, :image, :address, :latitude, :longtitude, :description)
+  			:title, :image, :address, :latitude, :longitude, :description)
   	end
 end
