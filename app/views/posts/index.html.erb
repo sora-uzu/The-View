@@ -1,3 +1,10 @@
+<div class="search">
+	<%= search_form_for @q, class: "search__form" do |f| %>
+	<%= f.label :title_cont, "キーワードで投稿を検索" %>
+    <%= f.search_field :title_cont, placeholder: "キーワード" %>
+	<%= f.submit "検索" %>
+	<% end %>
+</div>
 <h3>Posts</h3>
 <ul class="posts">
 <%= render partial: 'posts/post', collection: @posts %>

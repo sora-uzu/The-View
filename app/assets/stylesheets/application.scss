@@ -215,3 +215,16 @@ h3 {
   margin: 0 auto;
   width: 100%;
 }
+
+//検索フォーム
+.search{
+
+  &__form {
+    width: 95%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    &--field {
+    }
+  }
+}
