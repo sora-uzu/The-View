@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   def index
-  	@users = User.all
+   @q = User.ransack(params[:q])
+   @users =  if params[:q]
+              @q.result
+             else
+              User.all
+             end
   end
 
   def edit
