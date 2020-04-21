@@ -165,7 +165,7 @@ h3 {
     margin-top: 1rem;
 }
 
-//ユーザー一覧　users index
+//ユーザー一覧
 .users-index {
 	width: 1000px;
 	margin: 0 auto;
@@ -227,4 +227,13 @@ h3 {
     &--field {
     }
   }
+}
+
+//スクロール
+#more_link {
+  display: block;
+  max-width: 200px;
+  margin: 2rem auto;
+  background-color: #ffc107;
+  border-color: #ffc107;
 }

@@ -2,9 +2,9 @@ class UsersController < ApplicationController
   def index
    @q = User.ransack(params[:q])
    @users =  if params[:q]
-              @q.result
+              @q.result.order('created_at DESC').page(params[:page]).per(9)
              else
-              User.all
+              User.order('created_at DESC').page(params[:page]).without_count.per(2)
              end
   end
 
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
-  	@posts = @user.posts
+  	@posts = @user.posts.page(params[:page]).per(9)
   end
 
   def update
@@ -28,14 +28,12 @@ class UsersController < ApplicationController
 
   def following
     @user = User.find(params[:id])
-    @users = @user.following
-    render 'index'
+    @users = @user.following.order('created_at DESC').page(params[:page]).without_count.per(9)
   end
 
   def followers
     @user = User.find(params[:id])
-    @users = @user.followers
-    render 'index'
+    @users = @user.followers.order('created_at DESC').page(params[:page]).without_count.per(9)
   end
 
   def map
