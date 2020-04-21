@@ -2,9 +2,9 @@ class PostsController < ApplicationController
   def index
     @q = Post.ransack(params[:q])
   	@posts = if params[:q]
-              @q.result
+              @q.result.order('created_at DESC').page(params[:page]).per(9)
              else
-              Post.all
+              Post.page(params[:page]).without_count.per(9)
              end
   end
 
