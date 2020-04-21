@@ -17,6 +17,5 @@
  	<% end %>
  </div>
  <% end %>
- <%= link_to_prev_page @users, '前のページ' %>
-<%= link_to_next_page @users, '次のページ' %>
+ <%= link_to_next_page @users, 'もっと見る', remote: true, class: 'btn-warning btn btn-lg', id: 'more_link' unless @users.nil? %>
 </div>
