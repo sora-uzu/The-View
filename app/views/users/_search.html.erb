@@ -1,0 +1,7 @@
+<div class="search">
+	<%= search_form_for @q, class: "search__form" do |f| %>
+	<%= f.label :name_cont, "キーワードでユーザーを検索" %>
+    <%= f.search_field :name_cont, placeholder: "キーワード", class: "search__form--field" %>
+	<%= f.submit "検索" %>
+	<% end %>
+</div>

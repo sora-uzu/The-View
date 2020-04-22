@@ -1,39 +1,41 @@
 class UsersController < ApplicationController
   def index
-   @q = User.ransack(params[:q])
-   @users =  if params[:q]
-              @q.result.order('created_at DESC').page(params[:page]).per(9)
+    @q = User.ransack(params[:q])
+    @users = if params[:q]
+               @q.result.order('created_at DESC').page(params[:page]).per(9)
              else
-              User.order('created_at DESC').page(params[:page]).without_count.per(2)
-             end
+               User.order('created_at DESC').page(params[:page]).without_count.per(9)
+              end
   end
 
   def edit
-  	@user = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def show
-  	@user = User.find(params[:id])
-  	@posts = @user.posts.page(params[:page]).per(9)
+    @user = User.find(params[:id])
+    @posts = @user.posts.page(params[:page]).per(9)
   end
 
   def update
-  	@user = User.find(params[:id])
-  	if @user.update(user_params)
-  		redirect_to user_path(@user.id)
-  	else
-  		render "edit"
-  	end
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to user_path(@user.id)
+    else
+      render 'edit'
+    end
   end
 
   def following
     @user = User.find(params[:id])
     @users = @user.following.order('created_at DESC').page(params[:page]).without_count.per(9)
+    render 'index'
   end
 
   def followers
     @user = User.find(params[:id])
     @users = @user.followers.order('created_at DESC').page(params[:page]).without_count.per(9)
+    render 'index'
   end
 
   def map
@@ -42,9 +44,9 @@ class UsersController < ApplicationController
     render 'map'
   end
 
+  private
 
-  	private
-  	def user_params
-  		params.require(:user).permit(:name, :image)
-  	end
+  def user_params
+    params.require(:user).permit(:name, :image)
+  end
 end

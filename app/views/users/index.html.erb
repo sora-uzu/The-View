@@ -1,15 +1,7 @@
-<div class="search">
-	<%= search_form_for @q, class: "search__form" do |f| %>
-	<%= f.label :name_cont, "キーワードでユーザーを検索" %>
-    <%= f.search_field :name_cont, placeholder: "キーワード", class: "search__form--field" %>
-	<%= f.submit "検索" %>
-	<% end %>
-</div>
+<%if controller.action_name == "index" %>
+<%= render  'search' %>
+<% end %>
 
 <%= render  'profile', user: @user if @user %>
 
-<h3>Users</h3>
-<div class="users-index" id="users-index">
- <%= render partial: 'users/user', collection: @users %>
- <%= link_to_next_page @users, 'もっと見る', remote: true, class: 'btn-warning btn btn-lg', id: 'more_link' unless @users.nil? %>
-</div>
+<%= render 'pagelist', users: @users, title: users_title %>
