@@ -50,6 +50,10 @@ class PostsController < ApplicationController
     @posts = Post.all
     end
 
+    def rank
+      @posts = Post.create_like_ranks
+    end
+
   	private
 
   	def posts_params

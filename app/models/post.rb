@@ -8,4 +8,9 @@ class Post < ApplicationRecord
 
     geocoded_by :address
     after_validation :geocode
+
+  #いいね順
+  def self.create_like_ranks
+    Post.find(Like.group(:post_id).order('count(post_id) desc').limit(9).pluck(:post_id))
+  end
 end

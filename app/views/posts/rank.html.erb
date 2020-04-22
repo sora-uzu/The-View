@@ -1,0 +1,7 @@
+<div class="rank">
+<%= link_to "すべての投稿", posts_path %>
+</div>
+<h3>Ranking</h3>
+<ul class="posts" id="posts">
+<%= render partial: 'posts/post', collection: @posts %>
+</ul>
