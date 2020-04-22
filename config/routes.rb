@@ -18,6 +18,6 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create, :edit, :update, :destroy]
   end
-
+  get '/rank',to: 'posts#rank'
   get '/map', to: 'posts#map'
 end
