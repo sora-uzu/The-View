@@ -1,2 +1,2 @@
-$("#users-index").append("<%= escape_javascript(render partial: 'users/user',collection: @users) %>");
+$("#users-index").append("<%= escape_javascript(render partial: 'users/pagenate') %>");
 $("#more_link").replaceWith("<%= escape_javascript(link_to_next_page(@users, 'もっと見る', remote: true,class: 'btn-warning btn btn-lg', id: 'more_link')) %>");

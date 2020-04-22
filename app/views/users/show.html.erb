@@ -5,8 +5,5 @@
  <% else %>
 <h3>User's Posts</h3>
 <% end %>
- <ul class="posts" id="posts">
-<%= render partial: 'posts/post', collection: @posts %>
-</ul>
-<%= link_to_next_page @posts, 'もっと見る', remote: true,class: 'btn-warning btn btn-lg', id: 'more_link' unless @posts.nil? %>
+ <%= render 'posts/pagenate', posts: @posts %>
 </div>

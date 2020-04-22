@@ -56,6 +56,7 @@ GEM
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
+    ast (2.4.0)
     autoprefixer-rails (9.7.6)
       execjs
     bcrypt (3.1.13)
@@ -109,6 +110,8 @@ GEM
     factory_bot_rails (5.1.1)
       factory_bot (~> 5.1.0)
       railties (>= 4.2.0)
+    faker (2.11.0)
+      i18n (>= 1.6, < 2)
     ffi (1.12.2)
     geocoder (1.6.2)
     globalid (0.4.2)
@@ -120,6 +123,7 @@ GEM
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     io-like (0.3.1)
+    jaro_winkler (1.5.4)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
     jquery-rails (4.3.5)
@@ -166,6 +170,9 @@ GEM
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
+    parallel (1.19.1)
+    parser (2.7.1.1)
+      ast (~> 2.4.0)
     polyamorous (2.3.2)
       activerecord (>= 5.2.1)
     pry (0.13.1)
@@ -205,6 +212,7 @@ GEM
       method_source
       rake (>= 0.8.7)
       thor (>= 0.19.0, < 2.0)
+    rainbow (3.0.0)
     rake (13.0.1)
     ransack (2.3.2)
       activerecord (>= 5.2.1)
@@ -226,6 +234,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    rexml (3.2.4)
     rspec-core (3.9.1)
       rspec-support (~> 3.9.1)
     rspec-expectations (3.9.1)
@@ -243,6 +252,19 @@ GEM
       rspec-mocks (~> 3.9)
       rspec-support (~> 3.9)
     rspec-support (3.9.2)
+    rubocop (0.82.0)
+      jaro_winkler (~> 1.5.1)
+      parallel (~> 1.10)
+      parser (>= 2.7.0.1)
+      rainbow (>= 2.2.2, < 4.0)
+      rexml
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 2.0)
+    rubocop-rails (2.5.2)
+      activesupport
+      rack (>= 1.1)
+      rubocop (>= 0.72.0)
+    ruby-progressbar (1.10.1)
     ruby2_keywords (0.0.2)
     ruby_dep (1.5.0)
     rubyzip (2.3.0)
@@ -290,6 +312,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.7)
+    unicode-display_width (1.7.0)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (3.7.0)
@@ -316,6 +339,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_bot_rails
+  faker
   geocoder
   gmaps4rails
   jbuilder (~> 2.5)
@@ -329,6 +353,8 @@ DEPENDENCIES
   refile!
   refile-mini_magick
   rspec-rails
+  rubocop
+  rubocop-rails
   sass-rails (~> 5.0)
   selenium-webdriver
   spring

@@ -1,0 +1,5 @@
+<h3><%= title %></h3>
+<ul class="users-index" id="users-index">
+ <%= render 'users/pagenate', users: users %>
+</ul>
+ <%= link_to_next_page users, 'もっと見る', remote: true, class: 'btn-warning btn btn-lg', id: 'more_link' unless users.nil? %>
