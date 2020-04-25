@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+  end
+
   resources :users, only: [:index,:show,:edit,:update] do
     resources :likes, only: [:index]
     member do
