@@ -50,7 +50,7 @@
       <div class="post-info__comment">
         <div class="comment-form">
           <% if user_signed_in? %>
-          <%= attachment_image_tag current_user, :image, class: "prof-image", size: "80" %>
+          <%= attachment_image_tag current_user, :image, class: "prof-image", size: "80", fallback: "no_image.jpg" %>
           <%= render'comments/comment_form', comment: @comment, post: @post %>
           <% else %>
           <%= link_to "ログインしてコメントする。", user_session_path %>

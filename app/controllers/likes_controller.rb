@@ -1,4 +1,5 @@
 class LikesController < ApplicationController
+  before_action :authenticate_user!, only: %i[create destroy]
   def index
     @user = User.find(params[:user_id])
     likes = Like.where(user_id: @user)

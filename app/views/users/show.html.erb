@@ -5,5 +5,19 @@
  <% else %>
 <h3>User's Posts</h3>
 <% end %>
+
+<% if @posts.present? %>
  <%= render 'posts/pagenate', posts: @posts %>
+<% elsif current_user?(@user) %>
+<h4 class="text-c">
+	投稿はありません。
+</h4>
+<div class="text-c margin-t-1">
+<%= link_to "投稿する", new_post_path %>
+</div>
+<% else %>
+<h4 class="text-c">
+	投稿はありません。
+</h4>
+<% end %>
 </div>

@@ -1,6 +1,5 @@
 <div class="box form">
 <h2>New Post</h2>
-
 <div class="map-form">
  <form onsubmit="return false;">
     <input type="text" id="address" placeholder="場所を検索">
@@ -10,6 +9,7 @@
   </div>
 　
  <%= form_for(@post, class: "form") do |f| %>
+ <%= render 'layouts/error_messages', model: f.object %>
 	<%= f.text_field :title, placeholder: "タイトル" %>
 	<%= f.text_area :description, rows: "4", cols: "55", placeholder: "説明" %>
 	<%= f.text_field :latitude, id: "lat", type: "hidden" %>
