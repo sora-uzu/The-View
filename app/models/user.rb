@@ -41,9 +41,9 @@ class User < ApplicationRecord
     likes.exists?(post_id: post.id)
   end
 
-  #簡単ログイン
+  # 簡単ログイン
   def self.guest
-    find_or_create_by!(name: 'example',email: 'guest@example.com') do |user|
+    find_or_create_by!(name: 'example', email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
     end
   end

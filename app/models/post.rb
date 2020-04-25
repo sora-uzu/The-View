@@ -1,6 +1,10 @@
 class Post < ApplicationRecord
   attachment :image
   belongs_to :user
+  validates  :user_id, presence: true
+  validates  :title, presence: true, length: { maximum: 30 }
+  validates  :latitude, presence: true
+  validates  :image, presence: true
   has_many :likes, dependent: :destroy
   has_many :liked_users, through: :likes, source: :user
 

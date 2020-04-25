@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: %i[create destroy new edit]
+
   def index
     @q = Post.ransack(params[:q])
     @posts = if params[:q]
@@ -20,6 +22,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    redirect_to user_path(current_user.id) if current_user != @user
   end
 
   def create

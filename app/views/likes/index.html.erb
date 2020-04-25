@@ -1,5 +1,18 @@
 <div class="user-show">
 <%= render 'users/profile', user: @user %>
 <h3>Likes</h3>
-<%= render 'posts/pagenate', posts: @posts %>
+<% if @posts.present? %>
+ <%= render 'posts/pagenate', posts: @posts %>
+<% elsif current_user?(@user) %>
+<h4 class="text-c">
+	お気に入りはまだありません。
+</h4>
+<div class="text-c margin-t-1">
+<%= link_to "ランキングを見る", rank_path %>
+</div>
+<% else %>
+<h4 class="text-c">
+	お気に入りはありません。
+</h4>
+<% end %>
 </div>
