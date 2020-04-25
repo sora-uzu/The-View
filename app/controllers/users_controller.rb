@@ -2,9 +2,9 @@ class UsersController < ApplicationController
   def index
     @q = User.ransack(params[:q])
     @users = if params[:q]
-               @q.result.order('created_at DESC').page(params[:page]).per(9)
+               @q.result.order('created_at DESC').page(params[:page]).per(8)
              else
-               User.order('created_at DESC').page(params[:page]).without_count.per(9)
+               User.order('created_at DESC').page(params[:page]).without_count.per(8)
               end
   end
 
@@ -28,13 +28,13 @@ class UsersController < ApplicationController
 
   def following
     @user = User.find(params[:id])
-    @users = @user.following.order('created_at DESC').page(params[:page]).without_count.per(9)
+    @users = @user.following.order('created_at DESC').page(params[:page]).without_count.per(8)
     render 'index'
   end
 
   def followers
     @user = User.find(params[:id])
-    @users = @user.followers.order('created_at DESC').page(params[:page]).without_count.per(9)
+    @users = @user.followers.order('created_at DESC').page(params[:page]).without_count.per(8)
     render 'index'
   end
 

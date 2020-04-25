@@ -1,4 +1,7 @@
 <h3><%= title %></h3>
+<%if controller.action_name == "index" %>
+<%= render  'search' %>
+<% end %>
 <ul class="users-index" id="users-index">
  <%= render 'users/pagenate', users: users %>
 </ul>

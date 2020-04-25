@@ -10,6 +10,8 @@
 
     <script src="//maps.google.com/maps/api/js?key=AIzaSyAXOpW9I3NOCP_0K-oQfdHouPDfO1SrbgQ"></script>
     <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
   </head>
 
   <body
@@ -21,9 +23,10 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
           <li><%= link_to 'トップ', root_path %></li>
-          <li><%= link_to '全ての投稿', posts_path %></li>
-          <li><%= link_to 'マップ', map_path %></li>
-          <li><%= link_to '全てのユーザー', users_path%></li>
+          <li><%= link_to '投稿を見る', posts_path %></li>
+          <li><%= link_to "ランキング", rank_path %></li>
+          <li><%= link_to 'マップで探す', map_path %></li>
+          <li><%= link_to 'ユーザーを検索', users_path%></li>
           <% unless user_signed_in? %>
           <li><%= link_to ' ログイン', new_user_session_path %></a></li>
           <% end %>
@@ -37,5 +40,8 @@
   </div>
 </nav>
     <%= yield %>
+    <footer class="text-c text-muted">
+   Copyright©︎2020 TheView.com, All Rights Reserved.
+ </footer>
   </body>
 </html>

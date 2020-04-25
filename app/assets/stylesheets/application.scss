@@ -29,8 +29,17 @@ html {
 body {
  background: #F8F8FF;
  color: #333;
- font-family: 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+ font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
 
+footer {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.navbar-default {
+     background-color: #F8F8FF;
+    border-color: #e7e7e7;
 }
 
 //topページ
@@ -73,7 +82,7 @@ a {
 
 h2 {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 h3 {
@@ -103,6 +112,7 @@ h3 {
     margin-bottom: 3rem;
 }
 
+
 //投稿リスト
 .posts {
 	display: flex;
@@ -114,7 +124,38 @@ h3 {
     	display: block;
     	box-sizing: border-box;
     	padding: .5rem;
+      &--deteil {
+        display: flex;
+        padding: .7rem .3rem;
+        border-bottom: 1px solid #dee2e6;
+        margin-bottom: .5rem;
+      }
     }
+}
+
+/*.post-title {*/
+  /*margin: 0;*/
+/*}*/
+
+.prof-name {
+  margin-bottom: 0;
+  margin-left: .2rem;
+  padding-top: .3rem;
+}
+
+.prof-image {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.stats {
+  padding-top: .3rem;
+  list-style-type: none;
+  margin-left: auto;
+  display: flex;
+  &__icon + &__icon {
+    margin-left: .2rem;
+  }
 }
 
 .post-image {
@@ -126,6 +167,15 @@ h3 {
   border-radius: 10px;
 }
 
+.by {
+  margin-right: .2rem;
+  padding-top: .3rem;
+}
+
+.text-muted {
+    color: #6c757d!important;
+}
+
 //投稿詳細　post show
 .post-show {
 	max-width: 1000px;
@@ -133,22 +183,105 @@ h3 {
 	margin: 0 auto;
 }
 
+.post-action {
+  display: flex;
+  &__edit{
+    margin-left: auto;
+    display: flex;
+    &--icon {
+      font-size: 20px;
+      padding-right: .3rem;
+      padding-top: .4rem;
+    }
+    &--item {
+      list-style: none;
+    }
+  }
+}
+.like_action {
+  &__btn {
+    background: transparent;
+    border: none;
+    font-size: 32px;
+  }
+}
+.like_cnt {
+  font-size: 1rem;
+  margin-left: .3rem;
+  margin-top: .5rem;
+}
+
 .post-user {
+  display: flex;
 	padding: 2rem;
 	background: #fff;
+  border: 1px solid #dee2e6;
 	&__name {
 		margin-left: 1rem;
 		font-size: 1.3rem;
 	}
-	&__discription {
-		margin-left: 1.3rem;
-		margin-top:.3rem;
-		font-size: 1rem;
-	}
+}
+.post-discription {
+		margin-top:1rem;
+		padding: 2rem;
+    background: #fff;
+    border: 1px solid #dee2e6;
 }
 
 .post-picture {
   width: 100%;
+}
+
+.post-info {
+  &__comment {
+    margin-top: 1rem;
+    padding: 2rem;
+    background: #fff;
+    border: 1px solid #dee2e6;
+  }
+}
+
+.comments {
+  display: flex;
+  position: relative;
+  padding: 1rem 0 0;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  border-top:  1px solid #dee2e6;
+  &__info {
+    margin-left: 1rem;
+   &--destroy {
+      position: absolute;
+      right: 2rem;
+      border: none;
+    }
+  &--name {
+    font-size: 1rem;
+  }
+  &--date {
+    font-size: .6rem;
+  }
+  &--content {
+    font-size: .9rem;
+  }
+ }
+}
+
+.comment-form {
+  display: flex;
+  .post-comment {
+    border: 1px solid #dee2e6;
+    border-radius: .5rem;
+    padding: 0.5rem;
+    width: 600px;
+    height: 60px;
+    margin-left: 2rem;
+    font-size: 1rem;
+  }
+}
+
+.enter {
+  display: none;
 }
 
 //投稿編集　post edit
@@ -167,41 +300,100 @@ h3 {
 
 //ユーザー一覧
 .users-index {
-	width: 1000px;
-	margin: 0 auto;
-	background: #fff;
-	padding: 1rem 2rem;
-	box-shadow: 0 3px 6px rgba(0, 0, 0, .15);
-	&__posts{
-		height: 120px;
-		margin-top: 1rem;
-		margin-bottom: 1.5rem;
-     &--picture{
-        width: 120px;
-        height: 120px;
-        object-fit: cover;
-     }
+	display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 900px;
+    &__item {
+      width: 25%;
+      display: block;
+      box-sizing: border-box;
+      padding: .5rem;
+      &--deteil {
+        display: flex;
+        margin-bottom: .5rem;
+      }
     }
 }
 
+.user-image {
+  width: 100%;
+  height: 10rem;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  border-radius: 10px;
+}
+
+.at {
+  margin-right: .2rem;
+  padding-top: .1rem;
+}
+
 //ユーザープロフ　users prof
+.user-looks {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  color: #eeeeee;
+  padding-top: 1rem;
+  max-width: 500px;
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  background-color: #808080;
+}
+
+.user-looks:before{
+  content: '';
+  background: inherit;
+  content: '';
+  background: inherit;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+}
+
 .user-prof {
 	text-align: center;
-	width: 900px;
-	margin: 1rem auto 1rem;
-	box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-	background-color: #f8f8f8;
-	border-radius: 10px;
 }
+
+.user-prof a{
+  color: #fff;
+}
+
 
 .link-prof {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
-  color: #ffffff;
+  margin: 10px 0;
+  color: #fff;
+  list-style: none;
   &__item + &__item {
     margin-left: 1rem;
   }
+  &__item a {
+    color: #fff;
+  }
+}
+
+.f-btn {
+  margin-top: .3rem;
+}
+
+.user-name {
+  font-size: 1.5rem;
 }
 
 //マップ
@@ -218,15 +410,20 @@ h3 {
 
 //検索フォーム
 .search{
-
+  text-align: center;
+  margin-bottom: 1rem;
   &__form {
     width: 95%;
     max-width: 900px;
     margin: 0 auto;
-    display: flex;
-    &--field {
-    }
   }
+  &__field {
+    height: 1.8rem;
+  }
+}
+
+.mb-2 {
+  margin-bottom: .2rem;
 }
 
 //スクロール
@@ -241,5 +438,9 @@ h3 {
 //ランキング
 .rank {
   margin: 1rem auto;
-  max-width: 100px;
+  max-width: 900px;
+  display: flex;
+  &__btn {
+    margin-left:auto;
+  }
 }

@@ -3,10 +3,12 @@
 	<div class="post-image" style='background-image:url(<%= attachment_url(post, :image ) %>'>
 	</div>
 	<% end %>
-	<h4 class="post-title"><%= post.title %></h4>
-	<%#= attachment_image_tag post.user, :image, class: "prof-image", size: "30" %>
+	<div class="posts__item--deteil">
+	<!-- <h4 class="post-title"><%= post.title %></h4> -->
+	<i class="text-muted by">by</i>
+	<%= attachment_image_tag post.user, :image, class: "prof-image", size: "30" %>
 	<p class=prof-name><%= post.user.name %></p>
-	<ul class="stats">
+	<ul class="stats text-muted">
 		<li class="stats__icon">
 			<span class="glyphicon glyphicon-envelope"></span>
 			<span class="comment_count">
@@ -20,4 +22,5 @@
             </span>
         </li>
     </ul>
+</div>
 </li>

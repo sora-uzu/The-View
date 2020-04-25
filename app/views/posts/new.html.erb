@@ -1,27 +1,29 @@
 <div class="box form">
-	<h2>投稿フォーム</h2>
-  <p>場所を検索</p>
-  <form onsubmit="return false;">
-    <input type="text" id="address" placeholder="">
-    <button type="button" value="検索" id="map_button">検索</button>
-  </form>
-  <div id="map-camvas" style='width: 100%; height: 500px;'></div>
-　
-	<%= form_for(@post, class: "form") do |f| %>
-	<%= f.text_field :title, placeholder: "タイトル" %>
-	<%= f.text_area :description, placeholder: "説明" %>
-	<%= f.text_field :latitude, id: "lat", type: "hidden" %>
-  <%= f.text_field :longitude, id: "lng", type:"hidden" %>
+<h2>New Post</h2>
 
-	<label class="margin-t-1">
+<div class="map-form">
+ <form onsubmit="return false;">
+    <input type="text" id="address" placeholder="場所を検索">
+    <button type="button" value="検索" id="map_button">検索</button>
+ </form>
+  <div id="map-camvas" style='width: 100%; height: 500px;'></div>
+  </div>
+　
+ <%= form_for(@post, class: "form") do |f| %>
+	<%= f.text_field :title, placeholder: "タイトル" %>
+	<%= f.text_area :description, rows: "4", cols: "55", placeholder: "説明" %>
+	<%= f.text_field :latitude, id: "lat", type: "hidden" %>
+    <%= f.text_field :longitude, id: "lng", type:"hidden" %>
+
+　<label class="margin-t-1">
 	写真を選択
   </label>
-	<%= f.attachment_field :image %>
+    <%= f.attachment_field :image, class: "file-image" %>
 
-	<div class="actions">
-		<%= f.submit "投稿", class: "btn btn-primary" %>
-	</div>
-	<% end %>
+  <div class="actions">
+    <%= f.submit "投稿", class: "btn btn-primary" %>
+  </div>
+ <% end %>
 </div>
 
 <%= javascript_include_tag('map_new') %>

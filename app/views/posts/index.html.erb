@@ -1,13 +1,10 @@
+<h3>Posts</h3>
 <div class="search">
 	<%= search_form_for @q, class: "search__form" do |f| %>
-	<%= f.label :title_cont, "キーワードで投稿を検索" %>
-    <%= f.search_field :title_cont, placeholder: "キーワード" %>
-	<%= f.submit "検索" %>
+    <%= f.search_field :title_cont, placeholder: "キーワード", class: "search__field" %>
+	<%= button_tag type: 'submit', class: 'btn btn-warning mb-2' do %>
+            <i class="glyphicon glyphicon-search"></i>
+        <% end %>
 	<% end %>
 </div>
-<div class="rank">
-	<%= link_to "ランキング", rank_path, class: 'btn-warning btn btn-lg' %>
-</div>
-<h3>Posts</h3>
-
 <%= render 'posts/pagenate', posts: @posts %>

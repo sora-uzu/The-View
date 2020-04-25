@@ -1,13 +1,13 @@
 <% if current_user.already_liked?(post) %>
 
-  <%=button_to(post_like_path(post_id: post.id, id:current_user.id), method: :delete, remote: true) do %>
+  <%=button_to(post_like_path(post_id: post.id, id:current_user.id), method: :delete, class: "like_action__btn", remote: true) do %>
    <span class="glyphicon glyphicon-heart" style="color: red;"></span>
   <% end %>
 
 <% else %>
 
-  <%= button_to(post_likes_path(post) ,remote: true) do %>
-   <span class="glyphicon glyphicon-heart"></span>
+  <%= button_to(post_likes_path(post) ,class: "like_action__btn",remote: true) do %>
+   <span class="glyphicon glyphicon-heart" style="color: #C0C0C0;"></span>
   <% end %>
 
 <% end %>

@@ -1,4 +1,4 @@
 <%= form_for([post, comment], method: :post, remote:true) do |f| %>
  <%=f.text_field :content, placeholder: "コメントする", class: "post-comment",rows: "1" %>
- <%= f.submit %>
+ <%= f.submit class: "enter" %>
 <% end %>
