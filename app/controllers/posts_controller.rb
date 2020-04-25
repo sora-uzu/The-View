@@ -4,7 +4,7 @@ class PostsController < ApplicationController
     @posts = if params[:q]
                @q.result.order('created_at DESC').page(params[:page]).per(9)
              else
-               Post.page(params[:page]).without_count.per(9)
+               Post.order('created_at DESC').page(params[:page]).without_count.per(9)
              end
   end
 

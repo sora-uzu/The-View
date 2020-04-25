@@ -1,25 +1,29 @@
 <div class="box form">
-  <h2>編集フォーム</h2>
-	<p>場所を検索</p>
+  <h2>Edit</h2>
+
+  <div class="map-form">
 	<form onsubmit="return false;">
-    <input type="text" id="address">
-    <button type="button" value="検索" id="map_button">確認</button>
+    <input type="text" id="address" placeholder="場所を検索">
+    <button type="button" value="検索" id="map_button">検索</button>
 	</form>
   <div id="map-camvas" style='width: 100%; height: 500px;'></div>
+</div>
 
 	<%= form_for(@post, class: "form") do |f| %>
+	<label>タイトル</label>
 	<%= f.text_field :title, placeholder: "タイトル" %>
-	<%= f.text_area :description, placeholder: "説明" %>
+	<label>説明</label>
+	<%= f.text_area :description, rows: "4", cols: "55", placeholder: "説明" %>
 　　<%= f.text_field :latitude, id: "lat", type: "hidden" %>
     <%= f.text_field :longitude, id: "lng", type:"hidden" %>
 
-
-	<p class="text-c">投稿してる写真</p>
+    <p class="text-c">投稿してる写真</p>
 	<%= attachment_image_tag @post,:image, class: "edit-picture" %>
 	<label>
 	写真を選択
     </label>
 	<%= f.attachment_field :image %>
+
 	<div class="actions">
 		<%= f.submit "更新", class: "btn btn-primary" %>
 	</div>

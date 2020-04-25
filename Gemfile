@@ -67,6 +67,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
 gem 'dotenv-rails'
+gem 'faker'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'jquery-rails'
@@ -76,4 +77,3 @@ gem 'refile', require: 'refile/rails', github: 'manfe/refile'
 gem 'refile-mini_magick'
 gem 'rubocop', require: false
 gem 'rubocop-rails'
-gem 'faker'

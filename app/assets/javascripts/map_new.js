@@ -1,30 +1,46 @@
-var getMap = (function() {
-  function codeAddress(address) {
-    // google.maps.Geocoder()コンストラクタのインスタンスを生成
-    var geocoder = new google.maps.Geocoder();
-
-    // 地図表示に関するオプション
-    var mapOptions = {
+// 地図表示に関するオプション
+var mapOptions = {
       zoom: 11,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       center: {lat: 35.6587096, lng: 139.7452492},
-
       mapTypeControl: false,
       fullscreenControl: false, //全画面表示コントロール
       streetViewControl: false, //ストリートビュー コントロール
       zoomControl: true, //ズーム コントロール
-    };
+};
 
-    // 地図を表示させるインスタンスを生成
-    var map = new google.maps.Map(document.getElementById("map-camvas"), mapOptions);
+// google.maps.Geocoder()コンストラクタのインスタンスを生成
+var geocoder = new google.maps.Geocoder();
+// 地図を表示させるインスタンスを生成
+var map = new google.maps.Map(document.getElementById("map-camvas"), mapOptions);
+var marker = new google.maps.Marker();
 
-    //マーカー変数用意
-    var marker;
+// マップをクリックで位置変更
+  map.addListener('click', function(e) {
+      getClickLatLng(e.latLng, map);
+    });
+    function getClickLatLng(lat_lng, map) {
+      //☆表示している地図上の緯度経度
+      document.getElementById('lat').value=lat_lng.lat();
+      document.getElementById('lng').value=lat_lng.lng();
+      // マーカーを設置
+      console.log(marker)
+      if (marker) {
+        marker.setMap(null);
+      }
+      marker = new google.maps.Marker({
+        position: lat_lng,
+        map: map
+      });
+      // 座標の中心をずらす
+      map.panTo(lat_lng);
+    }
 
+var getMap = (function() {
+  function codeAddress(address) {
     // geocoder.geocode()メソッドを実行
     geocoder.geocode( { 'address': address}, function(results, status) {
-
-      // ジオコーディングが成功した場合
+       // ジオコーディングが成功した場合
       if (status == google.maps.GeocoderStatus.OK) {
         // 変換した緯度・経度情報を地図の中心に表示
         map.setCenter(results[0].geometry.location);
@@ -36,31 +52,11 @@ var getMap = (function() {
           map: map,
           position: results[0].geometry.location
         });
-
       // ジオコーディングが成功しなかった場合
       } else {
         console.log('Geocode was not successful for the following reason: ' + status);
       }
-
-      });
-
-    // マップをクリックで位置変更
-    map.addListener('click', function(e) {
-      getClickLatLng(e.latLng, map);
     });
-    function getClickLatLng(lat_lng, map) {
-      //☆表示している地図上の緯度経度
-      document.getElementById('lat').value=lat_lng.lat();
-      document.getElementById('lng').value=lat_lng.lng();
-      // マーカーを設置
-      marker.setMap(null);
-      marker = new google.maps.Marker({
-        position: lat_lng,
-        map: map
-      });
-      // 座標の中心をずらす
-      map.panTo(lat_lng);
-    }
   }
   //inputのvalueで検索して地図を表示
   return {
