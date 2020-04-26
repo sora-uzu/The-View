@@ -6,17 +6,16 @@ RSpec.describe 'Users', type: :request do
       FactoryBot.create :user
     end
 
-    it 'returns http success' do
-      get '/users/index'
-      expect(response).to have_http_status(:success)
+     it "リクエストが成功すること" do
+      get users_path
+      expect(response.status).to eq(200)
     end
 
     it 'user名が表示される' do
-      get '/users/index'
+       get users_path
       expect(response.body).to include 'name'
     end
   end
-end
 
 describe 'GET /edit' do
   before do
@@ -48,6 +47,7 @@ describe 'GET /show' do
       expect(response.body).to include 'name'
     end
   end
+end
 
   describe 'GET #new' do
     it 'リクエストが成功すること' do
