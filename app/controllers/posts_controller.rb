@@ -22,7 +22,9 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    redirect_to user_path(current_user.id) if current_user != @user
+    if current_user != @post.user
+      redirect_to books_path
+    end
   end
 
   def create
