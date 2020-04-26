@@ -16,6 +16,20 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+$breakpoint-down: (
+  'sm': 'screen and (max-width: 399px)',
+  'md': 'screen and (max-width: 767px)',
+  'lg': 'screen and (max-width: 999px)',
+  'xl': 'screen and (max-width: 1199px)',
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoint-down, $breakpoint)} {
+    @content;
+  }
+}
+
+
  * {
   margin: 0;
   padding: 0;
@@ -63,11 +77,12 @@ footer {
 .outline {
  text-align: center;
  font-size: 1rem;
- color: #333;
+ color: #F8F8FF;
 }
 
 .topbtn-block {
  text-align: center;
+ margin-top: 1rem;
  .topbtn{
    color: #ffffff;
    background: rgba(0, 0, 0, 0.3);
@@ -92,10 +107,14 @@ h3 {
 }
 //フォーム
 .box {
-  width: 580px;
+  max-width: 580px;
+  width: 95%;
   background: #ffffff;
   margin: 2rem auto 0;
   padding: 2rem 5rem;
+   @include mq {
+    padding: 2rem 2rem;
+  }
 }
 
 .actions {
@@ -118,7 +137,8 @@ h3 {
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0 auto;
-    width: 900px;
+  width: 100%;
+  max-width: 900px;
     &__item {
     	width: 33%;
     	display: block;
@@ -130,6 +150,9 @@ h3 {
         border-bottom: 1px solid #dee2e6;
         margin-bottom: .5rem;
       }
+      @include mq {
+      width: 50%;
+    }
     }
 }
 
@@ -160,7 +183,7 @@ h3 {
 
 .post-image {
   width: 100%;
-  height: 16rem;
+  padding-bottom: 100%;
   background-position: center;
   background-size: cover;
   box-shadow: 0 3px 6px rgba(0,0,0,0.15);
@@ -273,7 +296,8 @@ h3 {
     border: 1px solid #dee2e6;
     border-radius: .5rem;
     padding: 0.5rem;
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
     height: 60px;
     margin-left: 2rem;
     font-size: 1rem;
@@ -303,7 +327,8 @@ h3 {
 	display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  width: 900px;
+  width: 100%;
+  max-width: 900px;
     &__item {
       width: 25%;
       display: block;
@@ -313,7 +338,10 @@ h3 {
         display: flex;
         margin-bottom: .5rem;
       }
+      @include mq {
+      width: 50%;
     }
+  }
 }
 
 .user-image {
@@ -414,7 +442,7 @@ h3 {
   margin-bottom: 1rem;
   &__form {
     width: 95%;
-    max-width: 900px;
+    max-width: 400px;
     margin: 0 auto;
   }
   &__field {

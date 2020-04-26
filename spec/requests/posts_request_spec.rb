@@ -2,29 +2,42 @@ require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
   describe 'GET /index' do
-    it 'returns http success' do
+    it 'リクエストが成功すること' do
       get posts_path
       expect(response).to have_http_status(:success)
     end
   end
 
+  describe 'GET /new' do
+    it 'リクエストが成功すること' do
+      get new_post_path
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+
   describe 'GET /edit' do
     before do
-      @user = FactoryBot.create(:user)
-      @post = FactoryBot.create(:post, user: @user)
-      get edit_post_path(@post)
+      post = FactoryBot.create(:post)
+      get post_url post.id
     end
 
-    it 'returns http success' do
+    it 'リクエストが成功すること' do
       expect(response).to have_http_status(:success)
     end
 
     it '投稿タイトルが表示されている' do
       expect(response.body).to include 'タイトル'
     end
+  end
 
-    it '説明が表示されている' do
-      expect(response.body).to include '説明'
+  describe "GET #map" do
+    before do
+      get '/map'
+    end
+     it "マップ一覧ページが表示される" do
+      expect(response).to have_http_status(:success)
     end
   end
+
 end
