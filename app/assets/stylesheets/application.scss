@@ -58,7 +58,7 @@ footer {
 
 //topページ
 .home {
-  background-image:url(image-path('road.jpg'));
+  background-image:image-url(image-path('road.jpg'));
   background-size: cover;
   background-position: center;
   height: 100vh;
