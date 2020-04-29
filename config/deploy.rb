@@ -2,7 +2,7 @@
 lock "~> 3.13.0"
 
 set :application, "The-View"
-set :repo_url, "naruto07170717@gmail.com"
+set :repo_url, "git@github.com:sora-uzu/The-View.git"
 set :deploy_to, "/home/ec2-user/The-View"
 set :rbenv_ruby, '2.5.7'
 set :linked_files, %w{config/master.key .env}
