@@ -1,6 +1,6 @@
 <div class="user-looks" style='background-image:url(<%= attachment_url(user, :image ) %>'>
 <div class="user-prof">
-  <%= attachment_image_tag user, :image, :fill, 150, 150, fallback: "no_image.jpg", class: "user-prof__image prof-image" %>
+  <%= attachment_image_tag user, :image, fallback: "no_image.jpg", class: "user-prof__image prof-image", size: "150" %>
   <p class="user-name">＠<%= user.name %></p>
  <%= render 'users/follow_count', user: @user %>
  <div class="f-btn">
