@@ -9,10 +9,10 @@ var mapOptions = {
       zoomControl: true, //ズーム コントロール
 };
 
-// google.maps.Geocoder()コンストラクタのインスタンスを生成
-var geocoder = new google.maps.Geocoder();
 // 地図を表示させるインスタンスを生成
 var map = new google.maps.Map(document.getElementById("map-camvas"), mapOptions);
+// google.maps.Geocoder()コンストラクタのインスタンスを生成
+var geocoder = new google.maps.Geocoder();
 var marker = new google.maps.Marker();
 
 // マップをクリックで位置変更
@@ -48,6 +48,9 @@ var getMap = (function() {
         document.getElementById('lat').value=results[0].geometry.location.lat();
         document.getElementById('lng').value=results[0].geometry.location.lng();
         // マーカー設定
+         if (marker) {
+          marker.setMap(null);
+        }
         marker = new google.maps.Marker({
           map: map,
           position: results[0].geometry.location
