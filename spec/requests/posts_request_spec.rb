@@ -10,7 +10,6 @@ RSpec.describe 'Posts', type: :request do
     end
   end
 
-
   describe 'GET /edit' do
     before do
       post = FactoryBot.create(:post)
