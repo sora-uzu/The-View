@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: %i[create destroy new edit]
 
@@ -22,9 +24,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    if current_user != @post.user
-      redirect_to books_path
-    end
+    redirect_to books_path if current_user != @post.user
   end
 
   def create

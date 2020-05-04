@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
@@ -7,14 +9,6 @@ RSpec.describe 'Posts', type: :request do
       expect(response).to have_http_status(:success)
     end
   end
-
-  describe 'GET /new' do
-    it 'リクエストが成功すること' do
-      get new_post_path
-      expect(response).to have_http_status(:success)
-    end
-  end
-
 
   describe 'GET /edit' do
     before do
@@ -31,13 +25,12 @@ RSpec.describe 'Posts', type: :request do
     end
   end
 
-  describe "GET #map" do
+  describe 'GET #map' do
     before do
       get '/map'
     end
-     it "マップ一覧ページが表示される" do
+    it 'マップ一覧ページが表示される' do
       expect(response).to have_http_status(:success)
     end
   end
-
 end
