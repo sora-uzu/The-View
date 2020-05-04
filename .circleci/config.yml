@@ -69,6 +69,4 @@ workflows:
   rubocop_rspec:
     jobs:
       - rubocop
-      - rspec:
-          requires:
-            - rubocop
+      - rspec
