@@ -6,30 +6,58 @@ require:
   - rubocop-rails
 
 AllCops:
-  # Rubyバージョン指定
-  TargetRubyVersion: 2.6
-  # 除外
   Exclude:
-    - 'config.ru'
-    - 'bin/**'
-    - 'lib/**'
-    - 'db/**/*'
-    - 'config/**/*'
-    - 'script/**/*'
-    - !ruby/regexp /old_and_unused\.rb$/
+    - "tmp/**/*"
+    - "config/initializers/*"
+    - "vendor/**/*"
+    - "db/schema.rb"
+    - "node_modules/**/*"
+    - "db/migrate/*.rb"
+    - "bin/*"
+  DisplayCopNames: true
+  TargetRubyVersion: 2.5.7
 
-# 日本語でのコメントを許可
-AsciiComments:
+Rails:
+  Enabled: true
+
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+Style/AsciiComments:
   Enabled: false
 
-# クラスのコメント必須を無視
-Documentation:
+Style/Documentation:
   Enabled: false
 
-# モジュール名::クラス名の定義を許可
-ClassAndModuleChildren:
+Style/NumericLiterals:
   Enabled: false
 
-# 文字リテラルのイミュータブル宣言を無視（freezeになるのはRuby3以降）
-Style/FrozenStringLiteralComment:
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Lint/ShadowedException:
+  Enabled: false
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: false
+
+Lint/RaiseException:
+  Enabled: false
+
+Lint/StructNewOverride:
+  Enabled: false
+
+Style/ExponentialNotation:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: false
+
+Style/HashTransformKeys:
+  Enabled: false
+
+Style/HashTransformValues:
   Enabled: false

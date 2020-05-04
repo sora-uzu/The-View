@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module UsersHelper
   def users_title
     if controller.action_name == 'index'

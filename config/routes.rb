@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   root to: 'homes#top'
   devise_for :users, controllers: {
@@ -9,19 +11,19 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
 
-  resources :users, only: [:index,:show,:edit,:update] do
+  resources :users, only: %i[index show edit update] do
     resources :likes, only: [:index]
     member do
       get :following, :followers, :map
     end
   end
 
-  resources :relationships, only: [:create, :destroy]
+  resources :relationships, only: %i[create destroy]
 
   resources :posts do
-    resources :likes, only: [:create, :destroy]
-    resources :comments, only: [:create, :edit, :update, :destroy]
+    resources :likes, only: %i[create destroy]
+    resources :comments, only: %i[create edit update destroy]
   end
-  get '/rank',to: 'posts#rank'
+  get '/rank', to: 'posts#rank'
   get '/map', to: 'posts#map'
 end

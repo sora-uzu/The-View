@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
@@ -15,7 +17,6 @@ RSpec.describe 'Posts', type: :request do
     end
   end
 
-
   describe 'GET /edit' do
     before do
       post = FactoryBot.create(:post)
@@ -31,13 +32,12 @@ RSpec.describe 'Posts', type: :request do
     end
   end
 
-  describe "GET #map" do
+  describe 'GET #map' do
     before do
       get '/map'
     end
-     it "マップ一覧ページが表示される" do
+    it 'マップ一覧ページが表示される' do
       expect(response).to have_http_status(:success)
     end
   end
-
 end
