@@ -10,12 +10,6 @@ RSpec.describe 'Posts', type: :request do
     end
   end
 
-  describe 'GET /new' do
-    it 'リクエストが成功すること' do
-      get new_post_path
-      expect(response).to have_http_status(:success)
-    end
-  end
 
   describe 'GET /edit' do
     before do
