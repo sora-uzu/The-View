@@ -14,11 +14,15 @@ AllCops:
     - "node_modules/**/*"
     - "db/migrate/*.rb"
     - "bin/*"
+    - 'spec/rails_helper.rb'
   DisplayCopNames: true
   TargetRubyVersion: 2.5.7
 
 Rails:
   Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
 
 Style/AndOr:
   EnforcedStyle: conditionals
@@ -41,23 +45,23 @@ Bundler/OrderedGems:
 Lint/ShadowedException:
   Enabled: false
 
-Layout/SpaceAroundMethodCallOperator:
+Metrics/LineLength:
   Enabled: false
 
-Lint/RaiseException:
+Metrics/BlockLength:
+  Max: 250
+
+Metrics/AbcSize:
+  Max: 30
+
+Rails/FilePath:
   Enabled: false
 
-Lint/StructNewOverride:
+Security/Open:
   Enabled: false
 
-Style/ExponentialNotation:
+Rails/InverseOf:
   Enabled: false
 
-Style/HashEachMethods:
-  Enabled: false
-
-Style/HashTransformKeys:
-  Enabled: false
-
-Style/HashTransformValues:
+Rails/UniqueValidationWithoutIndex:
   Enabled: false

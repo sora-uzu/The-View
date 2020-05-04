@@ -7,7 +7,7 @@ class UsersController < ApplicationController
                @q.result.order('created_at DESC').page(params[:page]).per(8)
              else
                User.order('created_at DESC').page(params[:page]).without_count.per(8)
-              end
+             end
   end
 
   def edit
