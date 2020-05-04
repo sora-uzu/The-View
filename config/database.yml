@@ -17,9 +17,6 @@ development:
   <<: *default
   database: theview_development
 
-test:
-  <<: *default
-  database: theview_test
 
 production:
   <<: *default
