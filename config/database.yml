@@ -18,6 +18,11 @@ development:
   database: theview_development
 
 
+test:
+  <<: *default
+  database: theview_test
+
+
 production:
   <<: *default
   database: <%= ENV['DB_DATABASE'] %>
