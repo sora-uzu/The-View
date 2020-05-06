@@ -1,11 +1,11 @@
 # The View
- 景色の写真投稿サイトです。
+ 景色の写真投稿サイトです。<br >
  旅行先の景色や好きな景色を位置情報付きで共有できます。
  <!-- レスポンシブ対応しているのでスマホからもご確認いただけます。 -->
- <img width="1680" alt="スクリーンショット 2020-05-07 0 06 18" src="https://user-images.githubusercontent.com/60876388/81193748-c51d9b00-8ff6-11ea-9981-46789f016300.png">
+ <img width="1400" alt="スクリーンショット 2020-05-07 0 06 18" src="https://user-images.githubusercontent.com/60876388/81193748-c51d9b00-8ff6-11ea-9981-46789f016300.png">
 
 # URL
-http://the-view.work/
+http://the-view.work/ <br >
 画面中部のゲストログインボタンから、メールアドレスとパスワードを入力せずにログインできます。
 
 # 使用技術
@@ -26,7 +26,7 @@ http://the-view.work/
 
 <!-- # AWS構成図 -->
 
-# CircleCi CI/CD
+## CircleCi CI/CD
 - Githubへのpush時に、RspecとRubocopが自動で実行されます。
 - masterブランチへのpushでは、EC2への自動デプロイが実行されます
 
@@ -36,7 +36,7 @@ http://the-view.work/
   - 画像投稿(refile)
   - 位置情報検索機能(geocorder)
 - いいね機能(Ajax)
- - ランキング機能
+  - ランキング機能
 - コメント機能(Ajax)
 - フォロー機能(Ajax)
 - ページネーション機能(kaminari)
