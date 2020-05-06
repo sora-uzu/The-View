@@ -1,4 +1,4 @@
-# The View
+# The-View
  景色の写真投稿サイトです。<br >
  旅行先の景色や好きな景色を位置情報付きで共有できます。
  <!-- レスポンシブ対応しているのでスマホからもご確認いただけます。 -->
@@ -24,7 +24,8 @@ http://the-view.work/ <br >
 - RSpec
 - Google Maps API
 
-<!-- # AWS構成図 -->
+# AWS構成図
+<img width="996" alt="スクリーンショット 2020-05-07 1 44 15" src="https://user-images.githubusercontent.com/60876388/81204719-9ad2da00-9004-11ea-8e2c-ad594c30037a.png">
 
 ## CircleCi CI/CD
 - Githubへのpush時に、RspecとRubocopが自動で実行されます。
