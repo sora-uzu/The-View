@@ -1,24 +1,50 @@
 # The View
+ 景色の写真投稿サイトです。
+ 旅行先の景色や好きな景色を位置情報付きで共有できます。
+ <!-- レスポンシブ対応しているのでスマホからもご確認いただけます。 -->
+ <img width="1680" alt="スクリーンショット 2020-05-07 0 06 18" src="https://user-images.githubusercontent.com/60876388/81193748-c51d9b00-8ff6-11ea-9981-46789f016300.png">
 
-## サイト概要
- 景色を位置情報付きで共有できる写真投稿サイト
+# URL
+http://the-view.work/
+画面中部のゲストログインボタンから、メールアドレスとパスワードを入力せずにログインできます。
 
-### サイトテーマ
-景色共有サイト
+# 使用技術
+- Ruby 2.5.7
+- Ruby on Rails 5.2.4
+- MySQL 5.7
+- Nginx
+- Puma
+- AWS
+  - EC2
+  - RDS
+  - Route53
+- Docker/Docker-compose
+- CircleCi CI/CD
+- Capistrano3
+- RSpec
+- Google Maps API
 
-### テーマを選んだ理由
-景色を見ることが好きだから。旅行先を決める上で綺麗な景色の場所を知りたいから。
+<!-- # AWS構成図 -->
 
-### ターゲットユーザ
-景色を見たい人、共有したい人、旅行先を決めたい人
+# CircleCi CI/CD
+- Githubへのpush時に、RspecとRubocopが自動で実行されます。
+- masterブランチへのpushでは、EC2への自動デプロイが実行されます
 
-### 主な利用シーン
-なんとなく景色が見たいとき、景色から旅行先を探したいとき、景色共有したいとき
+# 機能一覧
+- ユーザー登録、ログイン機能(devise)
+- 投稿機能
+  - 画像投稿(refile)
+  - 位置情報検索機能(geocorder)
+- いいね機能(Ajax)
+ - ランキング機能
+- コメント機能(Ajax)
+- フォロー機能(Ajax)
+- ページネーション機能(kaminari)
+  - 無限スクロール(Ajax)
+- 検索機能(ransack)
 
-
-## 設計書
-
-### 機能一覧
-https://docs.google.com/spreadsheets/d/1BzuLTh0WP7M1O2MvT_8uprgL2WbrhieaerHlUNk9dGQ/edit#gid=0
-
-
+# テスト
+- RSpec
+  - 単体テスト(model)
+  - 機能テスト(request)
+  - 統合テスト(fearture)
