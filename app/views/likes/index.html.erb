@@ -2,7 +2,7 @@
 <%= render 'users/profile', user: @user %>
 <h3>Likes</h3>
 <% if @posts.present? %>
- <%= render 'posts/pagenate', posts: @posts %>
+ <%= render 'posts/pagelist', posts: @posts %>
 <% elsif current_user?(@user) %>
 <h4 class="text-c">
 	お気に入りはまだありません。
