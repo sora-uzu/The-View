@@ -38,6 +38,9 @@ $breakpoint-down: (
 
 html {
  font-size: 18px;
+ @include mq {
+    font-size: 12px;
+  }
 }
 
 body {
@@ -87,6 +90,7 @@ footer {
    color: #ffffff;
    background: rgba(0, 0, 0, 0.3);
    border: 1px solid #fff;
+   margin: 0 0.5rem;
  }
 }
 
