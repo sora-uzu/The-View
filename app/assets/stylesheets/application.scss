@@ -384,11 +384,11 @@ h3 {
   background: inherit;
   content: '';
   background: inherit;
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
+  -webkit-filter: blur(5px) brightness(50%);
+  -moz-filter: blur(5px) brightness(50%);
+  -o-filter: blur(5px) brightness(50%);
+  -ms-filter: blur(5px) brightness(50%);
+  filter: blur(5px) brightness(50%);
   position: absolute;
   top: -5px;
   left: -5px;
