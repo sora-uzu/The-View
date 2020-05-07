@@ -1,8 +1,13 @@
 // 地図表示に関するオプション
+var center = {
+  lat: 35.6587096,
+  lng: 139.7452492
+};
+
 var mapOptions = {
       zoom: 11,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
-      center: {lat: 35.6587096, lng: 139.7452492},
+      center: center,
       mapTypeControl: false,
       fullscreenControl: false, //全画面表示コントロール
       streetViewControl: false, //ストリートビュー コントロール

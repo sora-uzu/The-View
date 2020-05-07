@@ -30,4 +30,10 @@
 	<% end %>
 </div>
 
+<script>
+var center = {
+  lat: <%= @post.latitude %>,
+  lng: <%= @post.longitude %>
+};
+</script>
 <%= javascript_include_tag('map_new') %>
