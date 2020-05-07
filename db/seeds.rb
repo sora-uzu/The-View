@@ -12,24 +12,23 @@ Faker::Config.locale = :en
                password_confirmation: password)
 end
 
+users = User.order(created_at: 'DESC').take(20)
 
-users = User.order(created_at: "DESC").take(20)
-
-users.each.with_index(1) do |user, n|
- 1.upto(3) do |n|
-  title = Faker::Address.street_name
-  description = Faker::Movie.quote
-  image = open("#{Rails.root}/db/sample/scene/scene-#{rand(25) + 1}.jpg")
-  latitude = rand(10..60)
-  longitude = rand(5..147)
-  user.posts.create(
+users.each.with_index(1) do |user, _n|
+  1.upto(3) do |_n|
+    title = Faker::Address.street_name
+    description = Faker::Movie.quote
+    image = open("#{Rails.root}/db/sample/scene/scene-#{rand(1..25)}.jpg")
+    latitude = rand(10..60)
+    longitude = rand(5..147)
+    user.posts.create(
       title: title,
       description: description,
       image: image,
       latitude: latitude,
       longitude: longitude
     )
-end
+  end
 end
 
 # リレーションシップ
