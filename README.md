@@ -15,6 +15,7 @@ http://the-view.work/ <br >
 - Nginx
 - Puma
 - AWS
+  - VPC
   - EC2
   - RDS
   - Route53
@@ -25,7 +26,7 @@ http://the-view.work/ <br >
 - Google Maps API
 
 # AWS構成図
-<img width="996" alt="スクリーンショット 2020-05-07 1 44 15" src="https://user-images.githubusercontent.com/60876388/81204719-9ad2da00-9004-11ea-8e2c-ad594c30037a.png">
+<img width="995" alt="スクリーンショット 2020-05-07 11 14 01" src="https://user-images.githubusercontent.com/60876388/81247155-3ccde300-9054-11ea-91eb-d06eb38a63b3.png">
 
 ## CircleCi CI/CD
 - Githubへのpush時に、RspecとRubocopが自動で実行されます。
