@@ -1,6 +1,6 @@
 Faker::Config.locale = :en
 
-#ユーザー
+# ユーザー
 20.times do |n|
   name = Faker::FunnyName.name
   email = "sample#{n + 1}@sample.com"
@@ -13,7 +13,7 @@ Faker::Config.locale = :en
                password_confirmation: password)
 end
 
-#投稿
+# 投稿
 users = User.order(created_at: 'DESC').take(20)
 users.each.with_index(1) do |user, _n|
   1.upto(3) do |_n|
