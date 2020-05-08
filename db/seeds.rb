@@ -1,5 +1,6 @@
 Faker::Config.locale = :en
 
+# ユーザー
 20.times do |n|
   name = Faker::FunnyName.name
   email = "sample#{n + 1}@sample.com"
@@ -12,15 +13,15 @@ Faker::Config.locale = :en
                password_confirmation: password)
 end
 
+# 投稿
 users = User.order(created_at: 'DESC').take(20)
-
 users.each.with_index(1) do |user, _n|
   1.upto(3) do |_n|
     title = Faker::Address.street_name
     description = Faker::Movie.quote
-    image = open("#{Rails.root}/db/sample/scene/scene-#{rand(1..25)}.jpg")
+    image = open("#{Rails.root}/db/sample/scene/scene-#{rand(1..47)}.jpg")
     latitude = rand(10..60)
-    longitude = rand(5..147)
+    longitude = rand(5..140)
     user.posts.create(
       title: title,
       description: description,
@@ -33,23 +34,22 @@ end
 
 # リレーションシップ
 user = users.last
-following = users[2..20]
-followers = users[3..10]
+following = users[2..15]
+followers = users[3..14]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
 
-# # いいね
+# いいね
 posts = Post.order(:created_at)
-
 0.upto(30) do |i|
-  0.upto(10) do |n|
+  0.upto(4) do |n|
     posts[i].likes.create(user_id: users[n].id)
   end
 end
 
 # コメント
 0.upto(30) do |i|
-  0.upto(10) do |n|
+  0.upto(3) do |n|
     content = Faker::Lorem.sentence
     users[n].comments.create(post_id: posts[i].id, content: content)
   end
