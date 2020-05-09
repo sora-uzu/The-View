@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(posts_params)
     if @post.save
-      redirect_to current_user
+      redirect_to current_user, success: "投稿に成功しました。"
     else
       render :new
     end
@@ -48,7 +48,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_path
+    redirect_to current_user, success: "投稿を削除しました。"
   end
 
   def map
