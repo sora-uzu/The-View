@@ -16,10 +16,13 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
   </head>
 
-  <body
-  ><nav class="navbar navbar-default">
+  <body>
+    <header>
+      <div class= header-pc>
+      <nav class="navbar navbar-default">
   <div class="container">
     <nav class='nav navbar-nav navbar-left' >
+       <%= render 'layouts/flash' %>
       <h1>The-View</h1>
     </nav>
     <nav>
@@ -41,6 +44,38 @@
     </nav>
   </div>
 </nav>
+</div>
+  <div id="nav-drawer">
+      <input id="nav-input" type="checkbox" class="nav-unshown">
+      <label id="nav-open" for="nav-input"><span></span></label>
+      <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+      <div id="nav-content">
+        <nav class="navbar navbar-default">
+  <div class="container">
+    <nav class='nav navbar-nav navbar-left' >
+       <%= render 'layouts/flash' %>
+      <h1>The-View</h1>
+    </nav>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to 'トップ', root_path %></li>
+          <li><%= link_to '投稿を見る', posts_path %></li>
+          <li><%= link_to "ランキング", rank_path %></li>
+          <li><%= link_to 'マップで探す', map_path %></li>
+          <li><%= link_to 'ユーザーを検索', users_path%></li>
+          <% unless user_signed_in? %>
+          <li><%= link_to ' ログイン', new_user_session_path %></a></li>
+          <% end %>
+          <% if user_signed_in? %>
+          <li><%= link_to "投稿する", new_post_path %></li>
+          <li><%= link_to 'マイページ', current_user%></li>
+          <li><%= link_to ' ログアウト', destroy_user_session_path, method: :delete %></li>
+          <% end %>
+      </ul>
+    </nav>
+  </div>
+</nav>
+  </div>
     <%= yield %>
     <footer class="text-c text-muted">
    Copyright©︎2020 TheView.com, All Rights Reserved.

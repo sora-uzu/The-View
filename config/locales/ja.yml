@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        email: "メールアドレス"
+        name: "名前"
+        password: "パスワード"
+        password_confirmation: "確認用パスワード"
+        remember_me: "ログインを記憶"
+      post:
+        title: "タイトル"
+        image: "写真"
+        latitude: "位置情報"
+    models:
+      user: "ユーザ"
+      post: "投稿"
