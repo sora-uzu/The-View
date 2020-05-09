@@ -3,7 +3,7 @@
  旅行先の景色や好きな景色を位置情報付きで共有できます。 <br >
  レスポンシブ対応しているのでスマホからもご確認いただけます。
  <img width="1400" alt="スクリーンショット 2020-05-07 0 06 18" src="https://user-images.githubusercontent.com/60876388/81193748-c51d9b00-8ff6-11ea-9981-46789f016300.png">
- <img width="350" height="500" src= "https://user-images.githubusercontent.com/60876388/81476543-643bd000-924d-11ea-9d26-cac305ca9f91.jpeg">
+ <img width="350" height="700" src= "https://user-images.githubusercontent.com/60876388/81476543-643bd000-924d-11ea-9d26-cac305ca9f91.jpeg">
 
 # URL
 http://the-view.work/ <br >
