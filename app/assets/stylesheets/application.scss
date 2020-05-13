@@ -43,6 +43,13 @@ html {
   }
 }
 
+header{
+       position: sticky;/*固定する*/
+       position: -webkit-sticky;/*Safari用ベンダープレフィックス*/
+       top: 0;/*ブラウザの上からの距離はゼロ*/
+       z-index: 1;
+}
+
 body {
  background: #F8F8FF;
  color: #333;
