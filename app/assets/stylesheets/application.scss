@@ -44,9 +44,9 @@ html {
 }
 
 header{
-       position: sticky;/*固定する*/
-       position: -webkit-sticky;/*Safari用ベンダープレフィックス*/
-       top: 0;/*ブラウザの上からの距離はゼロ*/
+       position: sticky;
+       position: -webkit-sticky;/
+       top: 0;
        z-index: 1;
 }
 
