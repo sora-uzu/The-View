@@ -2,14 +2,14 @@ require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
   describe 'GET /new' do
-      before do
-        get new_user_session_path
-        user = FactoryBot.create(:user, name: 'test', email: 'email@example.com')
-        post posts_url, params: { post: FactoryBot.attributes_for(:post, user: user) }
-      end
-      it 'リクエストが成功すること' do
-        expect(response.status).to eq 302
-      end
+    before do
+      get new_user_session_path
+      user = FactoryBot.create(:user, name: 'test', email: 'email@example.com')
+      post posts_url, params: { post: FactoryBot.attributes_for(:post, user: user) }
+    end
+    it 'リクエストが成功すること' do
+      expect(response.status).to eq 302
+    end
   end
 
   describe 'GET /index' do
