@@ -1,6 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
+  describe 'GET /new' do
+      before do
+        get new_user_session_path
+        user = FactoryBot.create(:user, name: 'test', email: 'email@example.com')
+        post posts_url, params: { post: FactoryBot.attributes_for(:post, user: user) }
+      end
+      it 'リクエストが成功すること' do
+        expect(response.status).to eq 302
+      end
+  end
+
   describe 'GET /index' do
     it 'リクエストが成功すること' do
       get posts_path
@@ -13,11 +24,9 @@ RSpec.describe 'Posts', type: :request do
       post = FactoryBot.create(:post)
       get post_url post.id
     end
-
     it 'リクエストが成功すること' do
       expect(response).to have_http_status(:success)
     end
-
     it '投稿タイトルが表示されている' do
       expect(response.body).to include 'タイトル'
     end
