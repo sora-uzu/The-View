@@ -3,7 +3,7 @@
 	<div class="post-image" style='background-image:url(<%= attachment_url(post, :image ) %>'>
 	</div>
 	<% end %>
-	<div class="posts__item--deteil">
+   <div class="posts__item--deteil">
 	<!-- <h4 class="post-title"><%= post.title %></h4> -->
 	<i class="text-muted by">by</i>
 	<%= attachment_image_tag post.user, :image, class: "prof-image", size: "30" %>
@@ -22,5 +22,5 @@
             </span>
         </li>
     </ul>
-</div>
+   </div>
 </li>

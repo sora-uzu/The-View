@@ -3,7 +3,7 @@
 	<div class="user-image" style='background-image:url(<%= attachment_url(user, :image, fallback: "no_image.jpg" ) %>'>
 	</div>
    <% end %>
-  <div class="users-index__item--deteil">
-   <i class="text-muted at">＠</i><%= link_to user.name, user %>
-  </div>
+   <div class="users-index__item--deteil">
+    <i class="text-muted at">＠</i><%= link_to user.name, user %>
+   </div>
 </li>

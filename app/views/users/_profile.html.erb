@@ -1,19 +1,19 @@
 <div class="user-looks" style='background-image:url(<%= attachment_url(user, :image ) %>'>
-<div class="user-prof">
-  <%= attachment_image_tag user, :image, fallback: "no_image.jpg", class: "user-prof__image prof-image", size: "150" %>
-  <p class="user-name">＠<%= user.name %></p>
- <%= render 'users/follow_count', user: @user %>
- <div class="f-btn">
- <%= render 'users/follow_btn', user: @user %>
-</div>
-</div>
+ <div class="user-prof">
+   <%= attachment_image_tag user, :image, fallback: "no_image.jpg", class: "user-prof__image prof-image", size: "150" %>
+   <p class="user-name">＠<%= user.name %></p>
+   <%= render 'users/follow_count', user: @user %>
+  <div class="f-btn">
+   <%= render 'users/follow_btn', user: @user %>
+  </div>
+ </div>
 
-<ul class="link-prof">
- <li class="link-prof__item"><%= link_to "投稿一覧", user_path(user) %></li>
- <li class="link-prof__item"><%= link_to "お気に入り", user_likes_path(user) %></li>
- <li class="link-prof__item"><%= link_to "マップ", map_user_path(user) %></li>
- <% if current_user?(user) %>
- <li class="link-prof__item"><%= link_to "設定", edit_user_path(user) %></li>
- <% end %>
-</ul>
+ <ul class="link-prof">
+  <li class="link-prof__item"><%= link_to "投稿一覧", user_path(user) %></li>
+  <li class="link-prof__item"><%= link_to "お気に入り", user_likes_path(user) %></li>
+  <li class="link-prof__item"><%= link_to "マップ", map_user_path(user) %></li>
+  <% if current_user?(user) %>
+  <li class="link-prof__item"><%= link_to "設定", edit_user_path(user) %></li>
+  <% end %>
+ </ul>
 </div>
