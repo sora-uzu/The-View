@@ -31,7 +31,7 @@ http://the-view.work/ <br >
 
 ## CircleCi CI/CD
 - Githubへのpush時に、RspecとRubocopが自動で実行されます。
-- masterブランチへのpushでは、EC2への自動デプロイが実行されます
+- masterブランチへのpushでは、RspecとRubocopが成功した場合、EC2への自動デプロイが実行されます
 
 # 機能一覧
 - ユーザー登録、ログイン機能(devise)
