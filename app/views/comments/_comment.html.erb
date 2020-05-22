@@ -1,11 +1,11 @@
 <div class="comments" id="comments_<%= comment.id %>">
-	<%= attachment_image_tag comment.user, :image, class: "prof-image",size: "50", fallback: "no_image.jpg"%>
-	<div class="comments__info">
-		<%= link_to comment.user.name, comment.user, class: "comments__info--name" %>
-		<span class="comments__info--date"><%= created_date(comment) %></span>
-	<% if current_user?(comment.user) %>
+  <%= attachment_image_tag comment.user, :image, class: "prof-image",size: "50", fallback: "no_image.jpg"%>
+   <div class="comments__info">
+	 <%= link_to comment.user.name, comment.user, class: "comments__info--name" %>
+	 <span class="comments__info--date"><%= created_date(comment) %></span>
+	 <% if current_user?(comment.user) %>
 		<%= button_to "削除", post_comment_path(id: comment.id, post_id: comment.post.id), method: :delete, class: "comments__info--destroy", remote: true %>
-	<% end %>
-	<p class="comments__info--content"><%= comment.content %></p>
-</div>
+	 <% end %>
+	 <p class="comments__info--content"><%= comment.content %></p>
+   </div>
 </div>

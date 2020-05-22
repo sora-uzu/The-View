@@ -14,7 +14,7 @@
 	<%= f.text_field :title, placeholder: "タイトル" %>
 	<label>説明</label>
 	<%= f.text_area :description, rows: "4", cols: "55", placeholder: "説明" %>
-　　<%= f.text_field :latitude, id: "lat", type: "hidden" %>
+    <%= f.text_field :latitude, id: "lat", type: "hidden" %>
     <%= f.text_field :longitude, id: "lng", type:"hidden" %>
 
     <p class="text-c">投稿してる写真</p>
@@ -30,10 +30,4 @@
 	<% end %>
 </div>
 
-<script>
-var center = {
-  lat: <%= @post.latitude %>,
-  lng: <%= @post.longitude %>
-};
-</script>
 <%= javascript_include_tag('map_new') %>

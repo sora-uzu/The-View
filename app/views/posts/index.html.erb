@@ -1,10 +1,10 @@
 <h3>Posts</h3>
 <div class="search">
 	<%= search_form_for @q, class: "search__form" do |f| %>
-    <%= f.search_field :title_cont, placeholder: "キーワード", class: "search__field" %>
-	<%= button_tag type: 'submit', class: 'btn btn-warning mb-2' do %>
-            <i class="glyphicon glyphicon-search"></i>
-        <% end %>
+     <%= f.search_field :title_cont, placeholder: "キーワード", class: "search__field" %>
+	 <%= button_tag type: 'submit', class: 'btn btn-warning mb-2' do %>
+      <i class="glyphicon glyphicon-search"></i>
+     <% end %>
 	<% end %>
 </div>
 <%= render 'pagelist', posts: @posts %>
