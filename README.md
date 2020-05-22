@@ -37,7 +37,7 @@ http://the-view.work/ <br >
 - ユーザー登録、ログイン機能(devise)
 - 投稿機能
   - 画像投稿(refile)
-  - 位置情報検索機能(geocorder)
+  - 位置情報検索機能(geocoder)
 - いいね機能(Ajax)
   - ランキング機能
 - コメント機能(Ajax)
@@ -50,4 +50,4 @@ http://the-view.work/ <br >
 - RSpec
   - 単体テスト(model)
   - 機能テスト(request)
-  - 統合テスト(fearture)
+  - 統合テスト(feature)
